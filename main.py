@@ -7,15 +7,9 @@ logging.basicConfig(level=logging.INFO)
 
 
 if __name__ == "__main__":
-    
+
     # Get user command line args
     args = get_args()
-    
-    # Directory to check
-    #directory = '/Users/andrew.craik/Documents'
-
-    # For sorting the dataframe
-    #sort_key = ['filename', 'size_bytes']
 
     # Get the file inforation
     file_info_df = get_file_info(args.directory,
