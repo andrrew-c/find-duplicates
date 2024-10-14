@@ -10,6 +10,12 @@ def get_ignore_patterns():
         r'/.git/',
         r'/venv/',
         r'/\.DS_Store$',
+        r'/\.Rhistory',
+        r'/\.flake8',
+        r'/\.git',
+        r'/\.github',
+        r'/\.icon.png.meta',
+
     ]
     logging.debug(f"Loaded ignore patterns: {ignore_patterns}")
 
@@ -75,7 +81,7 @@ def get_file_dups(df, sort_key, ignore_files=True):
         logging.info(f"Excluding files/directories that match ignore patterns")
         # Exclude files/folders to ignore
         ignore_pattern = get_ignore_patterns()
-        df_files = df[~df['full_path'].str.contains(ignore_pattern, regex=True)]
+        df_files = df_files[~df_files['full_path'].str.contains(ignore_pattern, regex=True)]
         logging.info(f"New shape of df: {df_files.shape}")
 
     # Find the duplicates on sort key
