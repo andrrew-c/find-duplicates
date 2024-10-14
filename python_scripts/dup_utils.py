@@ -15,6 +15,7 @@ def get_ignore_patterns():
         r'/\.git',
         r'/\.github',
         r'/\.icon.png.meta',
+        r'/\._.DS_Store',
 
     ]
     logging.debug(f"Loaded ignore patterns: {ignore_patterns}")
